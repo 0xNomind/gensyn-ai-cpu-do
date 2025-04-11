@@ -105,14 +105,14 @@ cd rl-swarm
 ### ⚠️ Upgrade viem & Node version in Login Page
 1- Modify: `package.json`
 ```bash
-cd rl-swarm
+cd $HOME/rl-swarm
 nano modal-login/package.json
 ```
 * Update: `"viem":` to `"2.25.0"`
 
 2- Upgrade
 ```bash
-cd rl-swarm
+cd $HOME/rl-swarm
 cd modal-login
 yarn install
 
@@ -124,7 +124,7 @@ cd ..
 ### ⚠️ CPU-only Users: Ran out of input
 Navigate:
 ```
-cd rl-swarm
+cd $HOME/rl-swarm
 ```
 Edit:
 ```
@@ -196,6 +196,7 @@ max_rounds: 10000
 ## 3) Run the swarm
 Open a screen to run it in background
 ```bash
+cd $HOME/rl-swarm
 screen -S swarm
 ```
 Install swarm
