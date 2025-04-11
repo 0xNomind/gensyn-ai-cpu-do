@@ -229,6 +229,8 @@ ssh -L 3000:localhost:3000 root@Server_IP -p SSH_PORT
 
 * After login, your terminal starts installation.
 
+* Would you like to push models you train in the RL swarm to the Hugging Face Hub? [y/N] N
+
 ### Screen commands
 * Minimize: `CTRL` + `A` + `D`
 * Return: `screen -r swarm`
