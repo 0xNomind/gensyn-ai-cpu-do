@@ -153,9 +153,9 @@ lora_target_modules: ["q_proj", "k_proj", "v_proj", "o_proj"]
 lora_task_type: "CAUSAL_LM"
 
 # Training arguments
-max_steps: 10  # For testing; scale up as needed
+max_steps: 5 # For testing; scale up as needed
 per_device_train_batch_size: 32  #Increase for higher batch in one process
-gradient_accumulation_steps: 4
+gradient_accumulation_steps: 2
 gradient_checkpointing: false
 learning_rate: 5.0e-5
 lr_scheduler_type: cosine
