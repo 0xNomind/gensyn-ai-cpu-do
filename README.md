@@ -146,16 +146,16 @@ dataset_id_or_path: 'openai/gsm8k'
 
 # LoRA Arguments
 use_peft: true
-lora_alpha: 16
-lora_dropout: 0.01
-lora_r: 8
+lora_alpha: 8
+lora_dropout: 0.05
+lora_r: 4
 lora_target_modules: ["q_proj", "k_proj", "v_proj", "o_proj"]
 lora_task_type: "CAUSAL_LM"
 
 # Training arguments
-max_steps: 5  # For testing; scale up as needed
+max_steps: 10  # For testing; scale up as needed
 per_device_train_batch_size: 32  #Increase for higher batch in one process
-gradient_accumulation_steps: 1
+gradient_accumulation_steps: 4
 gradient_checkpointing: false
 learning_rate: 5.0e-5
 lr_scheduler_type: cosine
@@ -168,11 +168,11 @@ num_generations: 1
 use_vllm: false
 
 # CPU-specific optimizations
-num_workers: 20  # Adjust based on your total threads 
-ddp_enabled: true
+num_workers: 4  # Adjust based on your total threads 
+ddp_enabled: false
 torch_distributed_backend: "gloo"  # CPU-friendly DDP backend
-torch_num_threads: 20  # Adjust based on your total threads
-torch_intraop_threads: 20  # Explicit intra-op parallelism and Adjust based your total threads
+torch_num_threads: 4  # Adjust based on your total threads
+torch_intraop_threads: 4  # Explicit intra-op parallelism and Adjust based your total threads
 torch_interop_threads: 2   # Minimal inter-op threads to avoid contention
 pin_memory: false
 non_blocking: false
